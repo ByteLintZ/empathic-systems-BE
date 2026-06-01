@@ -1,4 +1,4 @@
-﻿# Empathic Systems — Backend API 🧠🤖
+# Empathic Systems — Backend API 🧠🤖
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688?style=for-the-badge&logo=fastapi)
@@ -13,18 +13,17 @@ This repository contains the backend infrastructure powering [EduChat Live Demo]
 
 ## 🎯 Key Features
 
-- **Real-time Emotion Classification**: Integrates IndoBERT via Hugging Face 	ransformers to analyze user inputs and classify emotions (e.g., Happy, Sad, Frustrated, Angry) before response generation.
+- **Real-time Emotion Classification**: Integrates IndoBERT via Hugging Face Transformers to analyze user inputs and classify emotions (e.g., Happy, Sad, Frustrated, Angry) before response generation.
 - **Blazingly Fast LLM Integration**: Powered by the [Groq API](https://groq.com/) (Llama-3.3-70b-versatile) for ultra-low latency inference.
 - **Intelligent Rate Limiting**: Token/quota-based request limiting to prevent abuse and manage API loads effectively.
 - **Robust Telemetry & Logging**: Structured logging system tracking latency, token usage, and AI response statistics.
-- **Clean Architecture**: Highly modular, maintainable structure utilizing FastAPI best practices (
-outes, services, models, utils).
+- **Clean Architecture**: Highly modular, maintainable structure utilizing FastAPI best practices (routes, services, models, utils).
 
 ## 🛠️ Technology Stack
 
 - **Framework:** FastAPI / Python 3.10+
 - **LLM Engine:** Groq API
-- **Machine Learning (NLP):** Hugging Face 	ransformers ([ZenyxS/indobert-emotion-emotionclf](https://huggingface.co/ZenyxS/indobert-emotion-emotionclf))
+- **Machine Learning (NLP):** Hugging Face Transformers ([ZenyxS/indobert-emotion-emotionclf](https://huggingface.co/ZenyxS/indobert-emotion-emotionclf))
 - **Server:** Uvicorn
 
 ---
@@ -32,7 +31,7 @@ outes, services, models, utils).
 ## 🚀 Local Development Setup
 
 ### 1. Clone & Setup Virtual Environment
-`ash
+```bash
 git clone https://github.com/ByteLintZ/empathic-systems-BE.git
 cd empathic-systems-BE
 python -m venv venv
@@ -41,25 +40,25 @@ python -m venv venv
 venv\Scripts\activate
 # Activate venv (Mac/Linux):
 source venv/bin/activate
-`
+```
 
 ### 2. Install Dependencies
-`ash
+```bash
 pip install -r requirements.txt
-`
+```
 
 ### 3. Environment Configuration
 Copy the template environment file:
-`ash
+```bash
 cp .env.example .env
-`
+```
 Ensure you populate the GROQ_API_KEY inside .env.
 
 ### 4. Run the Server
-`ash
+```bash
 python run.py
-`
-The server will start at http://0.0.0.0:8000 or http://localhost:7860.
+```
+The server will start at [http://0.0.0.0:8000](http://0.0.0.0:8000) or http://localhost:7860.
 Interactive API documentation (Swagger UI) is auto-generated and accessible at http://localhost:7860/docs.
 
 ---
@@ -69,13 +68,13 @@ Interactive API documentation (Swagger UI) is auto-generated and accessible at h
 This project includes a production-ready Dockerfile optimized for environments like AWS, GCP, VPS, or Hugging Face Spaces.
 
 1. **Build image:** 
-   `ash
+   ```bash
    docker build -t empathic-systems-be .
-   `
+```
 2. **Run container:** 
-   `ash
+   ```bash
    docker run -p 7860:7860 --env-file .env empathic-systems-be
-   `
+```
 
 ---
 

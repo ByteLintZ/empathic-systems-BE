@@ -1,0 +1,15 @@
+# Rahasia & Config
+.env
+
+
+**/__pycache__/
+*.pyc
+app/**/__pycache__/
+
+# Folder Data & Logs 
+data/conversations/
+logs/
+*.log
+
+# Git stuff
+.gitattributes
